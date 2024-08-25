@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --SUPERVISOR-OS: #44d3d2;
+  --TEAM-BUILDER-OS: #ea5454;
+  --KARMA-OS: #fcae4a;
+  --CALCULATOR-OS: #549ef2;
+  --BODY-TEXT: #4d4f62;
+  --BODY-BG: #fafafa;
+  --CARD-BG: #fff;
+
+  /* TYPOGRAPHY */
+  --FF: "Poppins", sans-serif;
+  --TITLE-SPAN: 200 24px var(--FF);
+  --TITLE: 600 24px var(--FF);
+  --HEADER-TEXT: normal 15px/25px var(--FF);
+  --CARD-TITLE: 600 20px var(--FF);
+  --CARD-TEXT: normal 13px/23px var(--FF);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: var(--BODY-BG);
+  font-family: var(--FF);
+  color: var(--BODY-TEXT);
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* || HEADER */
+.header {
+  margin: 85px 32px 76px 32px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.header__title {
+  font: var(--TITLE);
+  letter-spacing: 0.17px;
+  margin-bottom: 13px;
+}
+
+.header__title span {
+  font: var(--TITLE-SPAN);
+}
+
+.header__text {
+  font: var(--HEADER-TEXT);
+  opacity: 50%;
+  letter-spacing: 0.1px;
+}
+
+/* || MAIN */
+.main__card {
+  margin: 0 32px 78px 32px;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.main__card__mid {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+
+/* || CARDS */
+.card {
+  width: 311px;
+  height: 222px;
+  background-color: var(--CARD-BG);
+  border-radius: 8px;
+  padding: 27px 28px 28px 28px;
+  box-shadow: 0px 15px 30px -11px hsla(213, 47%, 67%, 0.5);
+  position: relative;
+}
+
+.card__title {
+  font: var(--CARD-TITLE);
+  margin-bottom: 1px;
+}
+
+.card__text {
+  font: var(--CARD-TEXT);
+  letter-spacing: 0.09px;
+  opacity: 50%;
+  margin-bottom: 33px;
+}
+
+.card__icon img {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+}
+
+.card.supervisor::before {
+  background-color: var(--SUPERVISOR-OS);
+}
+
+.card.team-builder::before {
+  background-color: var(--TEAM-BUILDER-OS);
+}
+
+.card.karma::before {
+  background-color: var(--KARMA-OS);
+}
+
+.card.calculator::before {
+  background-color: var(--CALCULATOR-OS);
+}
+
+/* Desktop */
+@media screen and (min-width: 720px) {
+  .header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 80px 450px 64px 450px;
+  }
+
+  .header__title {
+    font-size: 36px;
+    letter-spacing: 0.25px;
+    width: 444px;
+    height: auto;
+  }
+
+  .header__title span {
+    font-size: 36px;
+  }
+
+  .header__text {
+    width: 540px;
+    height: auto;
+  }
+
+  /* || MAIN */
+  .main__card {
+    margin: 0 165px 80px 165px;
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main__card__mid {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+  }
+
+  /* || CARDS */
+  .card {
+    width: 350px;
+    height: 250px;
+    padding: 32px;
+  }
+
+  .card__title {
+    margin-bottom: 6px;
+  }
+
+  .card__text {
+    margin-bottom: 40px;
+  }
+
+  .card__icon img {
+    width: 64px;
+    height: 64px;
+    bottom: 32px;
+    right: 32px;
+  }
+}
